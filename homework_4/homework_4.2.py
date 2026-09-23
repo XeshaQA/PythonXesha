@@ -14,4 +14,4 @@ with open('file_1.txt', 'r') as f_in,\
     f_even.close()
     f_odd.close()
 
-    print('Выполнено')
+    print('Выполнено!')

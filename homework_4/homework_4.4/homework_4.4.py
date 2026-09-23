@@ -10,4 +10,4 @@ with open('file_switch_1.txt', 'w') as f1:
 with open('file_switch_2.txt', 'w') as f2:
     f2.write(data1)
 
-print('Смена содержимого файлов мечтами прошла успешно')
+print('Смена содержимого файлов местами прошла успешно')

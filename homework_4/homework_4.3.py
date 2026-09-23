@@ -11,4 +11,4 @@ with open('squares.txt', 'w') as f_out:
     for sq in squares:
         f_out.write(f'{sq}\n')
 
-print('Все числа заменены на квадраты')
+print('Все числа заменены на квадраты!')
