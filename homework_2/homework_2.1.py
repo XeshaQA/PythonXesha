@@ -5,6 +5,5 @@ for x in range (1, 31):
         print('Bug')
     elif x % 5 == 0:
         print ('Test')
-
     else:
         print(x)
