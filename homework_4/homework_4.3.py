@@ -7,7 +7,7 @@ with open('file_1.txt', 'r') as f_in:
             number = float(clean_line)
             square = number ** 2
             squares.append(square)
-with open('squares.txt', 'w') as f_out:
+with open('file_1.txt', 'w') as f_out:
     for sq in squares:
         f_out.write(f'{sq}\n')
 
