@@ -6,7 +6,7 @@ while user <= 20:
         user += 1
         continue
 
-    if user == 19:
+    if user == 18:
         break
     else:
         print (user)
