@@ -24,6 +24,7 @@ def process_users_file(filepath: str):
 
             print(f"Пользователь {index}:")
             print(f"Логин: {login}")
+            print(f'Пароль: {password}')
             print(f"Результат: {expected}")
 
         except KeyError as e:
