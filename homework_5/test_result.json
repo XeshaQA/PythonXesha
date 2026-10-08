@@ -1,0 +1,7 @@
+   [
+     {"name": "test_1", "status": "PASS", "time": 0.5},
+     {"name": "test_2", "status": "FAIL", "time": 1.05},
+     {"name": "test_3", "status": "SKIP", "time": 0.046456},
+     {"name": "test_4", "status": "PASS", "time": 30.5},
+     {"name": "test_5", "status": "FAIL", "time": 5.0}
+     ]
