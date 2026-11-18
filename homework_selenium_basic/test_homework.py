@@ -16,6 +16,10 @@ def test_add_remove_elements(driver):
 
     assert len(delete_elements) == 2, 'There should be 2 elements detected.'
 
+    delete_elements[0].click()
+    delete_elements_after = driver.find_elements(By.XPATH, '//button[text()="Delete"]')
+    assert len(delete_elements_after) == 1, 'There should be 1 elements after deletion.'
+
 @pytest.mark.basic
 def test_checkboxes(driver):
     driver.get("https://the-internet.herokuapp.com/checkboxes")
@@ -23,13 +27,15 @@ def test_checkboxes(driver):
     first_checkbox = checkboxes[0]
     second_checkbox = checkboxes[1]
 
-    assert first_checkbox.is_selected() == False, "first checkbox shouldn't be selected"
+    assert not first_checkbox.is_selected(), "first checkbox shouldn't be selected"
     first_checkbox.click()
-    assert first_checkbox.is_selected() == True, "first checkbox should be selected"
 
-    assert second_checkbox.is_selected() == True, "second checkbox should be selected"
+    assert first_checkbox.is_selected(), "first checkbox should be selected"
+
+    assert second_checkbox.is_selected(), "second checkbox should be selected"
     second_checkbox.click()
-    assert second_checkbox.is_selected() == False, "second checkbox shouldn't be selected"
+
+    assert not second_checkbox.is_selected(), "second checkbox shouldn't be selected"
 
 @pytest.mark.basic
 def test_dropdown(driver):
@@ -62,6 +68,10 @@ def test_inputs(driver):
 
     input_field.send_keys(Keys.CONTROL + "a")
     input_field.send_keys(Keys.BACKSPACE)
+    input_field.send_keys("abc#@!")
+
+    assert input_field.get_attribute("value") == "", "can't write non-numeric"
+
 
     input_field.send_keys("5")
 
@@ -72,7 +82,9 @@ def test_inputs(driver):
     input_field.send_keys(Keys.ARROW_DOWN)
     input_field.send_keys(Keys.ARROW_DOWN)
 
+
     assert input_field.get_attribute("value") == "4", "can't arrow down"
+
 
 @pytest.mark.basic
 def test_typos(driver):
